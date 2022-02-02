@@ -4,9 +4,11 @@ import CoverImage from "./cover-image";
 import Link from "next/link";
 
 export default function HeroPost({
+  kicker,
   title,
   coverImage,
   date,
+  readingTime,
   excerpt,
   author,
   slug,
@@ -15,6 +17,7 @@ export default function HeroPost({
     <section>
       <div className="mb-8 md:mb-16">
         <CoverImage
+          kicker={kicker}
           title={title}
           responsiveImage={coverImage.responsiveImage}
           slug={slug}
@@ -28,6 +31,7 @@ export default function HeroPost({
             </Link>
           </h3>
           <div className="mb-4 md:mb-0 text-lg">
+            <span>{readingTime}</span>
             <Date dateString={date} />
           </div>
         </div>

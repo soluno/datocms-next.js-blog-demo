@@ -32,6 +32,7 @@ export async function getStaticProps({ params, preview = false }) {
           seo: _seoMetaTags {
             ...metaTagsFragment
           }
+          kicker
           title
           slug
           content {
@@ -48,6 +49,7 @@ export async function getStaticProps({ params, preview = false }) {
               }
             }
           }
+          readingTime
           date
           ogImage: coverImage{
             url(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 })

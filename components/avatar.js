@@ -1,6 +1,6 @@
 import { Image } from "react-datocms";
 
-export default function Avatar({ name, picture }) {
+export default function Avatar({ name, vorname, picture }) {
   return (
     <div className="flex items-center">
       <div className="w-12 h-12 mr-4">
@@ -10,7 +10,7 @@ export default function Avatar({ name, picture }) {
           className="rounded-full"
         />
       </div>
-      <div className="text-xl font-bold">{name}</div>
+      <div className="text-xl font-bold">{name} {vorname}</div>
     </div>
   );
 }

@@ -10,12 +10,15 @@ export default function MoreStories({ posts }) {
         {posts.map((post) => (
           <PostPreview
             key={post.slug}
+            kicker={post.kicker}
             title={post.title}
             coverImage={post.coverImage}
+            readingTime={post.readingTime}
             date={post.date}
             author={post.author}
             slug={post.slug}
             excerpt={post.excerpt}
+            excerptShort={post.excerptShort}
           />
         ))}
       </div>

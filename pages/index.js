@@ -23,16 +23,20 @@ export async function getStaticProps({ preview }) {
           }
         }
         allPosts(orderBy: date_DESC, first: 20) {
+          kicker
           title
           slug
           excerpt
+          excerptShort
           date
+          readingTime          
           coverImage {
             responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
               ...responsiveImageFragment
             }
           }
           author {
+            vorname
             name
             picture {
               responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 100, h: 100, sat: -100}) {
@@ -83,9 +87,11 @@ export default function Index({ subscription }) {
           <Intro />
           {heroPost && (
             <HeroPost
+              kicker={heroPost.kicker}
               title={heroPost.title}
               coverImage={heroPost.coverImage}
               date={heroPost.date}
+              readingTime={heroPost.readingTime}
               author={heroPost.author}
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
